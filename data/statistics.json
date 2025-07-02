@@ -1,0 +1,22 @@
+{
+  "A2": {
+    "lms_lessons": {
+      "developed": 3700,
+      "total_goal": 5000
+    }
+  },
+  "apex_stellenbosch": {
+    "finance": {
+      "forecasted_cost_per_learner_per_year": "R17200",
+      "current_school_fees_per_month": "R620"
+    },
+    "learners": {
+      "total": 326,
+      "absenteeism_end_second_term": "2.2%"
+    },
+    "staff": {
+      "total_facilitators_and_teachers": 12,
+      "absenteeism_end_second_term": "1.7%"
+    }
+  }
+}
