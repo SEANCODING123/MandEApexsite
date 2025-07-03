@@ -92,6 +92,185 @@
             color: #68d391;
         }
 
+        /* CHUNK 3: HERO SECTION WITH KPI DASHBOARD */
+        .hero {
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 50%, #4299e1 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.05)"><polygon points="0,0 1000,0 1000,100 0,80"/></svg>') repeat-x;
+            background-size: 1000px 100px;
+            animation: wave 20s linear infinite;
+        }
+
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-1000px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #68d391 0%, #38a169 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(104, 211, 145, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(104, 211, 145, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* KPI DASHBOARD */
+        .kpi-dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .kpi-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .kpi-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #68d391 0%, #38a169 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #68d391;
+        }
+
+        .kpi-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-trend {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        .trend-up {
+            color: #68d391;
+        }
+
+        .trend-down {
+            color: #fc8181;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
@@ -122,13 +301,132 @@
         </div>
     </nav>
 
-    <!-- PLACEHOLDER FOR CONTENT CHUNKS -->
+    <!-- Hero Section with KPI Dashboard -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Annual Impact Report 2024</div>
+                <h1 class="hero-title">Transforming Education Through Data</h1>
+                <p class="hero-subtitle">
+                    Comprehensive monitoring and evaluation insights from our educational impact initiatives, 
+                    demonstrating measurable outcomes and sustainable growth across all program areas.
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="#introduction" class="btn-primary">
+                        📊 View Full Report
+                    </a>
+                    <button id="downloadPDF" class="btn-secondary">
+                        📄 Download PDF
+                    </button>
+                </div>
+
+                <!-- KPI Dashboard -->
+                <div class="kpi-dashboard">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">👥</div>
+                        <div class="kpi-number">326</div>
+                        <div class="kpi-label">Active Learners</div>
+                        <div class="kpi-trend trend-up">
+                            ↗ +12% this year
+                        </div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-icon">📚</div>
+                        <div class="kpi-number">3,700</div>
+                        <div class="kpi-label">LMS Lessons</div>
+                        <div class="kpi-trend trend-up">
+                            ↗ 74% complete
+                        </div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-icon">📈</div>
+                        <div class="kpi-number">97.8%</div>
+                        <div class="kpi-label">Attendance Rate</div>
+                        <div class="kpi-trend trend-up">
+                            ↗ Above target
+                        </div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-icon">💰</div>
+                        <div class="kpi-number">R620</div>
+                        <div class="kpi-label">Monthly Fees</div>
+                        <div class="kpi-trend trend-up">
+                            ↗ Sustainable model
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLACEHOLDER FOR ADDITIONAL CONTENT CHUNKS -->
     <div id="content-placeholder">
         <div class="container" style="padding: 4rem 0; text-align: center;">
-            <h1>Apex Education Impact Report 2024</h1>
-            <p>Building in chunks... Navigation structure ready!</p>
+            <h2>Ready for next sections...</h2>
+            <p>Hero section with KPI dashboard complete!</p>
         </div>
     </div>
 
+    <script>
+        // Basic JavaScript for hero section functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePDFDownload();
+            initializeAnimations();
+        });
+
+        function initializePDFDownload() {
+            const downloadBtn = document.getElementById('downloadPDF');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    this.innerHTML = '⏳ Generating...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        alert('PDF download functionality will be implemented with jsPDF library in the complete version.');
+                        this.innerHTML = '📄 Download PDF';
+                        this.disabled = false;
+                    }, 1500);
+                });
+            }
+        }
+
+        function initializeAnimations() {
+            // Animate KPI cards on load
+            const kpiCards = document.querySelectorAll('.kpi-card');
+            kpiCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * (index + 1));
+            });
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = 80;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
