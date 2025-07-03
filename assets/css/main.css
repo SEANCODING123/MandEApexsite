@@ -1,0 +1,620 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #356c84;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #fcbf16;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #356c84 0%, #4a7c95 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fcbf16;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Section Styles */
+.section {
+    padding: 80px 0;
+}
+
+.section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #356c84;
+}
+
+/* Overview Section */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.overview-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-5px);
+}
+
+.overview-card h3 {
+    color: #356c84;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Progress Bar */
+.progress-container {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #356c84 0%, #4a7c95 100%);
+    width: 74%;
+    transition: width 1s ease;
+}
+
+.progress-text {
+    font-weight: 500;
+    color: #356c84;
+}
+
+/* School Info */
+.school-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #356c84;
+}
+
+/* Schools Section */
+.schools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 2rem;
+}
+
+.school-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.school-card:hover {
+    transform: translateY(-8px);
+}
+
+.school-header {
+    background: linear-gradient(135deg, #356c84 0%, #4a7c95 100%);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.school-header h3 {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.school-logo img {
+    height: 60px;
+    width: auto;
+}
+
+.school-stats {
+    padding: 2rem;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-box .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #356c84;
+    margin-bottom: 0.5rem;
+}
+
+.stat-box .stat-label {
+    font-size: 0.875rem;
+    color: #666;
+}
+
+/* Financial Info */
+.financial-info {
+    border-top: 2px solid #e9ecef;
+    padding-top: 1.5rem;
+}
+
+.financial-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.financial-label {
+    font-weight: 500;
+    color: #666;
+}
+
+.financial-value {
+    font-weight: 600;
+    color: #356c84;
+    font-size: 1.1rem;
+}
+
+/* Statistics Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.stats-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stats-card h3 {
+    color: #356c84;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* LMS Progress */
+.lms-progress {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.circle-progress {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#356c84 0deg 266.4deg, #e9ecef 266.4deg 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-inner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.percentage {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #356c84;
+}
+
+.progress-details {
+    flex: 1;
+    text-align: left;
+}
+
+.progress-details p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+/* Attendance Stats */
+.attendance-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.attendance-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.attendance-label {
+    min-width: 120px;
+    font-weight: 500;
+    color: #666;
+}
+
+.attendance-bar {
+    flex: 1;
+    height: 20px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.attendance-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+    width: 97.8%;
+    transition: width 1s ease;
+}
+
+.attendance-fill[data-attendance="98.3"] {
+    width: 98.3%;
+}
+
+.attendance-percentage {
+    min-width: 50px;
+    font-weight: 600;
+    color: #28a745;
+}
+
+/* Reports Section */
+.reports-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.report-category h3 {
+    color: #356c84;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.report-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.report-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.report-item:hover {
+    transform: translateY(-5px);
+}
+
+.report-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.report-caption {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: #356c84;
+    background: #f8f9fa;
+}
+
+/* Footer */
+.footer {
+    background-color: #356c84;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo img {
+    height: 40px;
+    width: auto;
+}
+
+.footer-info {
+    text-align: right;
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .overview-grid,
+    .schools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .lms-progress {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .attendance-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .footer-info {
+        text-align: center;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Download Button Styles */
+.download-btn {
+    background: linear-gradient(135deg, #fcbf16 0%, #f0b90b 100%);
+    color: #356c84;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2rem;
+    box-shadow: 0 5px 20px rgba(252, 191, 22, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(252, 191, 22, 0.4);
+    background: linear-gradient(135deg, #f0b90b 0%, #fcbf16 100%);
+}
+
+.download-btn:active {
+    transform: translateY(-1px);
+}
+
+.download-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.download-icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.5;
+}
+
+.download-icon.spinning {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Notification Styles */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 9999;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
