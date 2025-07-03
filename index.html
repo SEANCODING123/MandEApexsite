@@ -271,6 +271,187 @@
             color: #fc8181;
         }
 
+        /* CHUNK 4: INTRODUCTION SECTION */
+        .introduction {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .introduction::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #2c5282, transparent);
+        }
+
+        .intro-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .ceo-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: sticky;
+            top: 120px;
+        }
+
+        .ceo-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .ceo-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+        }
+
+        .ceo-title {
+            color: #64748b;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .ceo-quote {
+            font-style: italic;
+            color: #475569;
+            line-height: 1.7;
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .ceo-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: #e2e8f0;
+            position: absolute;
+            top: -1rem;
+            left: -0.5rem;
+            font-family: serif;
+        }
+
+        .letter-content {
+            background: white;
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .letter-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .letter-subtitle {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+
+        .letter-body {
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .letter-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .letter-body p:first-child::first-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #2c5282;
+            float: left;
+            line-height: 3rem;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border-left: 4px solid #2c5282;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .highlight-box h4 {
+            color: #2c5282;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .impact-stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 15px;
+        }
+
+        .impact-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .signature {
+            margin-top: 3rem;
+            text-align: right;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .signature-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .signature-title {
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
@@ -280,6 +461,28 @@
                 display: none;
             }
             h1 { font-size: 2rem; }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .kpi-dashboard {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .intro-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .ceo-card {
+                position: static;
+                order: 2;
+            }
+            .letter-content {
+                padding: 2rem;
+                order: 1;
+            }
+            .impact-stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -363,11 +566,100 @@
         </div>
     </section>
 
+    <!-- Introduction Section -->
+    <section id="introduction" class="introduction">
+        <div class="container">
+            <div class="intro-container">
+                <!-- CEO Card -->
+                <div class="ceo-card">
+                    <div class="ceo-image">👨‍💼</div>
+                    <div class="ceo-name">Dr. James Mitchell</div>
+                    <div class="ceo-title">Chief Executive Officer</div>
+                    <div class="ceo-quote">
+                        "Our commitment to data-driven education transformation continues to yield remarkable results across all our impact areas."
+                    </div>
+                </div>
+
+                <!-- Letter Content -->
+                <div class="letter-content">
+                    <div class="letter-header">
+                        <h2 class="letter-title">Message from Leadership</h2>
+                        <p class="letter-subtitle">Reflecting on Our Educational Impact Journey</p>
+                    </div>
+
+                    <div class="letter-body">
+                        <p>
+                            Dear Stakeholders and Partners, as we present our 2024 Monitoring & Evaluation Report, 
+                            I am proud to share the remarkable progress we have achieved in transforming educational 
+                            outcomes through evidence-based interventions and innovative pedagogical approaches.
+                        </p>
+
+                        <p>
+                            This year has been marked by significant milestones in our journey toward educational excellence. 
+                            Our comprehensive M&E framework has enabled us to track, measure, and optimize every aspect 
+                            of our educational delivery, ensuring that we meet and exceed our commitment to learner success.
+                        </p>
+
+                        <div class="highlight-box">
+                            <h4>Key Achievement Highlights</h4>
+                            <p>
+                                Our integrated approach combining traditional teaching methods with cutting-edge Learning 
+                                Management System (LMS) technology has revolutionized how we deliver education, resulting 
+                                in measurable improvements across all performance indicators.
+                            </p>
+                        </div>
+
+                        <div class="impact-stats">
+                            <div class="impact-stat">
+                                <div class="impact-number">326</div>
+                                <div class="impact-label">Learners Served</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="impact-number">97.8%</div>
+                                <div class="impact-label">Attendance Rate</div>
+                            </div>
+                            <div class="impact-stat">
+                                <div class="impact-number">74%</div>
+                                <div class="impact-label">LMS Progress</div>
+                            </div>
+                        </div>
+
+                        <p>
+                            The development of our proprietary A2 Learning Management System represents a paradigm 
+                            shift in educational technology. With 3,700 lessons already developed and deployed, 
+                            we are well on track to achieve our target of 5,000 comprehensive learning modules 
+                            by the end of the academic year.
+                        </p>
+
+                        <p>
+                            Our financial sustainability model continues to demonstrate viability, with monthly fees 
+                            maintained at R620 while ensuring quality education delivery. This balanced approach 
+                            ensures accessibility while maintaining the resources necessary for continuous improvement 
+                            and innovation.
+                        </p>
+
+                        <p>
+                            Looking ahead, we remain committed to our mission of providing world-class education 
+                            that prepares learners for success in an increasingly complex global environment. 
+                            The data presented in this report underscores our collective achievement and provides 
+                            a roadmap for continued excellence.
+                        </p>
+                    </div>
+
+                    <div class="signature">
+                        <div class="signature-name">Dr. James Mitchell</div>
+                        <div class="signature-title">Chief Executive Officer<br>Apex Education Network</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PLACEHOLDER FOR ADDITIONAL CONTENT CHUNKS -->
     <div id="content-placeholder">
         <div class="container" style="padding: 4rem 0; text-align: center;">
-            <h2>Ready for next sections...</h2>
-            <p>Hero section with KPI dashboard complete!</p>
+            <h2>Next: Academic Impact Section</h2>
+            <p>Introduction section with CEO letter complete!</p>
         </div>
     </div>
 
