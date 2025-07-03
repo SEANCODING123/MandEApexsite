@@ -452,6 +452,250 @@
             margin-top: 0.5rem;
         }
 
+        /* CHUNK 5: ACADEMIC IMPACT SECTION */
+        .academic-impact {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        .academic-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .academic-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .academic-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .performance-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 82, 130, 0.1);
+        }
+
+        .performance-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .progress-section {
+            margin-top: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .progress-label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .progress-percentage {
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border-radius: 6px;
+            transition: width 2s ease;
+        }
+
+        .lms-overview {
+            background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .lms-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .lms-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .lms-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .lms-stat {
+            text-align: center;
+        }
+
+        .lms-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #68d391;
+            margin-bottom: 0.5rem;
+        }
+
+        .lms-label {
+            opacity: 0.9;
+        }
+
+        .attendance-overview {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 3rem 0;
+        }
+
+        .attendance-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .attendance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .attendance-item {
+            text-align: center;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 15px;
+        }
+
+        .attendance-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .attendance-rate {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #10b981;
+            margin-bottom: 0.5rem;
+        }
+
+        .attendance-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .target-indicator {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
@@ -482,6 +726,24 @@
             .impact-stats {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+            .academic-title {
+                font-size: 2rem;
+            }
+            .academic-grid {
+                grid-template-columns: 1fr;
+            }
+            .performance-metrics {
+                grid-template-columns: 1fr;
+            }
+            .lms-title {
+                font-size: 2rem;
+            }
+            .lms-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .attendance-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -655,11 +917,187 @@
         </div>
     </section>
 
+    <!-- Academic Impact Section -->
+    <section id="academic" class="academic-impact">
+        <div class="container">
+            <div class="academic-header">
+                <h2 class="academic-title">Academic Impact</h2>
+                <p class="academic-subtitle">
+                    Comprehensive performance analytics demonstrating measurable improvements in learning outcomes 
+                    across all educational domains and grade levels.
+                </p>
+            </div>
+
+            <!-- Performance Cards -->
+            <div class="academic-grid">
+                <div class="performance-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <div class="card-title">Grade 8 Performance</div>
+                    </div>
+                    <div class="performance-metrics">
+                        <div class="metric">
+                            <div class="metric-value">87%</div>
+                            <div class="metric-label">Mathematics</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">92%</div>
+                            <div class="metric-label">Home Language</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">English</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">94%</div>
+                            <div class="metric-label">Life Skills</div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Term 2 Improvement</span>
+                            <span class="progress-percentage">+8%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-card">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">Grade 9 Performance</div>
+                    </div>
+                    <div class="performance-metrics">
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Mathematics</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">90%</div>
+                            <div class="metric-label">Home Language</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">88%</div>
+                            <div class="metric-label">English</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">91%</div>
+                            <div class="metric-label">Life Skills</div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Term 2 Improvement</span>
+                            <span class="progress-percentage">+6%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="performance-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">Learning Outcomes</div>
+                    </div>
+                    <div class="performance-metrics">
+                        <div class="metric">
+                            <div class="metric-value">96%</div>
+                            <div class="metric-label">Pass Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">78%</div>
+                            <div class="metric-label">Distinction Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">92%</div>
+                            <div class="metric-label">Promotion Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Competency Achievement</div>
+                        </div>
+                    </div>
+                    <div class="progress-section">
+                        <div class="progress-header">
+                            <span class="progress-label">Annual Growth</span>
+                            <span class="progress-percentage">+12%</span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LMS Development Overview -->
+            <div class="lms-overview">
+                <h3 class="lms-title">A2 Learning Management System</h3>
+                <p class="lms-description">
+                    Revolutionary digital learning platform transforming educational delivery through 
+                    interactive content, adaptive assessments, and comprehensive progress tracking.
+                </p>
+                <div class="lms-stats">
+                    <div class="lms-stat">
+                        <div class="lms-number">3,700</div>
+                        <div class="lms-label">Lessons Developed</div>
+                    </div>
+                    <div class="lms-stat">
+                        <div class="lms-number">74%</div>
+                        <div class="lms-label">Progress Complete</div>
+                    </div>
+                    <div class="lms-stat">
+                        <div class="lms-number">1,300</div>
+                        <div class="lms-label">Lessons Remaining</div>
+                    </div>
+                    <div class="lms-stat">
+                        <div class="lms-number">5,000</div>
+                        <div class="lms-label">Total Target</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Overview -->
+            <div class="attendance-overview">
+                <h3 class="attendance-title">Attendance Performance Analysis</h3>
+                <div class="attendance-grid">
+                    <div class="attendance-item">
+                        <div class="attendance-icon">👥</div>
+                        <div class="attendance-rate">97.8%</div>
+                        <div class="attendance-label">Learner Attendance</div>
+                        <div class="target-indicator">Above Target (95%)</div>
+                    </div>
+                    <div class="attendance-item">
+                        <div class="attendance-icon">👨‍🏫</div>
+                        <div class="attendance-rate">98.3%</div>
+                        <div class="attendance-label">Staff Attendance</div>
+                        <div class="target-indicator">Exceeds Target (98%)</div>
+                    </div>
+                    <div class="attendance-item">
+                        <div class="attendance-icon">📅</div>
+                        <div class="attendance-rate">2.2%</div>
+                        <div class="attendance-label">Learner Absenteeism</div>
+                        <div class="target-indicator">Well Below Threshold</div>
+                    </div>
+                    <div class="attendance-item">
+                        <div class="attendance-icon">🎯</div>
+                        <div class="attendance-rate">1.7%</div>
+                        <div class="attendance-label">Staff Absenteeism</div>
+                        <div class="target-indicator">Excellent Performance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PLACEHOLDER FOR ADDITIONAL CONTENT CHUNKS -->
     <div id="content-placeholder">
         <div class="container" style="padding: 4rem 0; text-align: center;">
-            <h2>Next: Academic Impact Section</h2>
-            <p>Introduction section with CEO letter complete!</p>
+            <h2>Next: Financial Efficiency Section</h2>
+            <p>Academic Impact section complete!</p>
         </div>
     </div>
 
