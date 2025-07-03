@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Apex M&E Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #356c84;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            background: linear-gradient(135deg, #356c84 0%, #4a7c95 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .download-btn {
+            background: #fcbf16;
+            color: #356c84;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            padding: 40px 0;
+            background: white;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .section-title {
+            font-size: 2rem;
+            color: #356c84;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .stat-box {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #356c84;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Apex M&E Dashboard - TEST VERSION</h1>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Apex M&E Report Dashboard</h1>
+            <p class="hero-subtitle">Monitoring & Evaluation Data for Apex Schools Network</p>
+            <button class="download-btn" onclick="alert('Test button works!')">Test Button</button>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Test Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="stat-number">326</div>
+                    <div class="stat-label">Total Learners</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Staff Members</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">3,700</div>
+                    <div class="stat-label">LMS Lessons</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">74%</div>
+                    <div class="stat-label">Progress</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        console.log('JavaScript is working!');
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded successfully');
+        });
+    </script>
+</body>
+</html>
