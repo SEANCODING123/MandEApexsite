@@ -696,6 +696,255 @@
             display: inline-block;
         }
 
+        /* CHUNK 6: FINANCIAL EFFICIENCY SECTION */
+        .financial-efficiency {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .financial-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .financial-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .financial-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .financial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .cost-analysis-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 82, 130, 0.1);
+        }
+
+        .cost-analysis-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .cost-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .cost-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .cost-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2c5282;
+        }
+
+        .cost-metrics {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 15px;
+            border-left: 4px solid #10b981;
+        }
+
+        .cost-label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 1rem;
+        }
+
+        .cost-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #059669;
+        }
+
+        .cost-trend {
+            font-size: 0.85rem;
+            color: #10b981;
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .sustainability-overview {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 4rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .sustainability-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .sustainability-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sustainability-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .sustainability-metric {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .sustainability-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #a7f3d0;
+            margin-bottom: 0.5rem;
+        }
+
+        .sustainability-label {
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .comparison-table {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            margin: 3rem 0;
+        }
+
+        .table-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c5282;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .table-header {
+            font-weight: 700;
+            color: #2c5282;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .table-cell {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            font-weight: 500;
+        }
+
+        .table-row:hover .table-cell {
+            background: #f8fafc;
+        }
+
+        .efficiency-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .efficiency-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .efficiency-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .efficiency-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 1rem;
+        }
+
+        .efficiency-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 0.5rem;
+        }
+
+        .efficiency-description {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
@@ -743,6 +992,29 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             .attendance-grid {
+                grid-template-columns: 1fr;
+            }
+            .financial-title {
+                font-size: 2rem;
+            }
+            .financial-grid {
+                grid-template-columns: 1fr;
+            }
+            .sustainability-title {
+                font-size: 2rem;
+            }
+            .sustainability-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            .table-header, .table-cell {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            .efficiency-indicators {
                 grid-template-columns: 1fr;
             }
         }
@@ -1093,11 +1365,186 @@
         </div>
     </section>
 
+    <!-- Financial Efficiency Section -->
+    <section id="financial" class="financial-efficiency">
+        <div class="container">
+            <div class="financial-header">
+                <h2 class="financial-title">Financial Efficiency</h2>
+                <p class="financial-subtitle">
+                    Comprehensive cost analysis demonstrating sustainable financial models and optimized 
+                    resource allocation ensuring long-term educational sustainability and accessibility.
+                </p>
+            </div>
+
+            <!-- Cost Analysis Cards -->
+            <div class="financial-grid">
+                <div class="cost-analysis-card">
+                    <div class="cost-header">
+                        <div class="cost-icon">💰</div>
+                        <div class="cost-title">Current Fee Structure</div>
+                    </div>
+                    <div class="cost-metrics">
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Monthly School Fees</div>
+                                <div class="cost-trend">↗ Stable pricing model</div>
+                            </div>
+                            <div class="cost-value">R620</div>
+                        </div>
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Annual Fee Total</div>
+                                <div class="cost-trend">↗ 12-month structure</div>
+                            </div>
+                            <div class="cost-value">R7,440</div>
+                        </div>
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Registration Fee</div>
+                                <div class="cost-trend">→ One-time payment</div>
+                            </div>
+                            <div class="cost-value">R1,200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cost-analysis-card">
+                    <div class="cost-header">
+                        <div class="cost-icon">📊</div>
+                        <div class="cost-title">Cost Per Learner Analysis</div>
+                    </div>
+                    <div class="cost-metrics">
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Forecasted Annual Cost</div>
+                                <div class="cost-trend">↗ All-inclusive estimate</div>
+                            </div>
+                            <div class="cost-value">R17,200</div>
+                        </div>
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Monthly Cost Breakdown</div>
+                                <div class="cost-trend">→ Per learner basis</div>
+                            </div>
+                            <div class="cost-value">R1,433</div>
+                        </div>
+                        <div class="cost-item">
+                            <div>
+                                <div class="cost-label">Operating Efficiency</div>
+                                <div class="cost-trend">↗ Optimized operations</div>
+                            </div>
+                            <div class="cost-value">87%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sustainability Overview -->
+            <div class="sustainability-overview">
+                <h3 class="sustainability-title">Financial Sustainability Model</h3>
+                <p class="sustainability-description">
+                    Our balanced approach ensures educational excellence while maintaining affordability, 
+                    creating a sustainable financial ecosystem that supports continuous improvement and growth.
+                </p>
+                <div class="sustainability-metrics">
+                    <div class="sustainability-metric">
+                        <div class="sustainability-number">R620</div>
+                        <div class="sustainability-label">Monthly Fee</div>
+                    </div>
+                    <div class="sustainability-metric">
+                        <div class="sustainability-number">326</div>
+                        <div class="sustainability-label">Total Learners</div>
+                    </div>
+                    <div class="sustainability-metric">
+                        <div class="sustainability-number">R202K</div>
+                        <div class="sustainability-label">Monthly Revenue</div>
+                    </div>
+                    <div class="sustainability-metric">
+                        <div class="sustainability-number">87%</div>
+                        <div class="sustainability-label">Efficiency Rate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Comparison Table -->
+            <div class="comparison-table">
+                <h3 class="table-title">Regional Fee Comparison Analysis</h3>
+                <div class="comparison-grid">
+                    <div class="table-header">Institution Type</div>
+                    <div class="table-header">Monthly Fee</div>
+                    <div class="table-header">Annual Total</div>
+                    <div class="table-header">Value Rating</div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Apex Stellenbosch</strong></div>
+                        <div class="table-cell">R620</div>
+                        <div class="table-cell">R7,440</div>
+                        <div class="table-cell">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">Regional Average</div>
+                        <div class="table-cell">R850</div>
+                        <div class="table-cell">R10,200</div>
+                        <div class="table-cell">⭐⭐⭐</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">Premium Private</div>
+                        <div class="table-cell">R1,200</div>
+                        <div class="table-cell">R14,400</div>
+                        <div class="table-cell">⭐⭐⭐⭐</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell">Budget Alternative</div>
+                        <div class="table-cell">R450</div>
+                        <div class="table-cell">R5,400</div>
+                        <div class="table-cell">⭐⭐</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Efficiency Indicators -->
+            <div class="efficiency-indicators">
+                <div class="efficiency-card">
+                    <div class="efficiency-icon">🎯</div>
+                    <div class="efficiency-title">Cost Effectiveness</div>
+                    <div class="efficiency-value">92%</div>
+                    <div class="efficiency-description">
+                        Optimal balance between educational quality and financial accessibility, 
+                        ensuring maximum value for families.
+                    </div>
+                </div>
+
+                <div class="efficiency-card">
+                    <div class="efficiency-icon">📈</div>
+                    <div class="efficiency-title">Revenue Stability</div>
+                    <div class="efficiency-value">96%</div>
+                    <div class="efficiency-description">
+                        Consistent fee collection rates and predictable revenue streams 
+                        supporting sustainable operations.
+                    </div>
+                </div>
+
+                <div class="efficiency-card">
+                    <div class="efficiency-icon">💡</div>
+                    <div class="efficiency-title">Innovation Investment</div>
+                    <div class="efficiency-value">15%</div>
+                    <div class="efficiency-description">
+                        Dedicated budget allocation for technology advancement and 
+                        educational innovation initiatives.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PLACEHOLDER FOR ADDITIONAL CONTENT CHUNKS -->
     <div id="content-placeholder">
         <div class="container" style="padding: 4rem 0; text-align: center;">
-            <h2>Next: Financial Efficiency Section</h2>
-            <p>Academic Impact section complete!</p>
+            <h2>Next: Innovation & Community Sections</h2>
+            <p>Financial Efficiency section complete!</p>
         </div>
     </div>
 
