@@ -4,10 +4,282 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex M&E Report - Monitoring & Evaluation Dashboard</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #356c84;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #fcbf16;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #356c84 0%, #4a7c95 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            background: linear-gradient(135deg, #fcbf16 0%, #f0b90b 100%);
+            color: #356c84;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 5px 20px rgba(252, 191, 22, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(252, 191, 22, 0.4);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fcbf16;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #356c84;
+        }
+
+        /* Overview Section */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .overview-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .overview-card h3 {
+            color: #356c84;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-top: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #356c84 0%, #4a7c95 100%);
+            width: 74%;
+            transition: width 1s ease;
+        }
+
+        .progress-text {
+            font-weight: 500;
+            color: #356c84;
+        }
+
+        /* School Info */
+        .school-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .info-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .info-value {
+            font-weight: 600;
+            color: #356c84;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #356c84;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-info {
+            text-align: right;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Navigation -->
@@ -15,7 +287,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/images/logos/Apex_Logo_-_White[1].png" alt="Apex Schools Logo" class="logo-img">
+                    APEX SCHOOLS
                 </div>
                 <nav class="nav">
                     <ul class="nav-list">
@@ -35,13 +307,8 @@
             <div class="hero-content">
                 <h1 class="hero-title">Apex M&E Report Dashboard</h1>
                 <p class="hero-subtitle">Monitoring & Evaluation Data for Apex Schools Network</p>
-                <button id="downloadPDF" class="download-btn">
-                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="7,10 12,15 17,10"/>
-                        <line x1="12" y1="15" x2="12" y2="3"/>
-                    </svg>
-                    Download PDF Report
+                <button id="downloadPDF" class="download-btn" onclick="generatePDF()">
+                    📊 Download PDF Report
                 </button>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -104,42 +371,33 @@
     <section id="schools" class="section schools">
         <div class="container">
             <h2 class="section-title">School Performance</h2>
-            <div class="schools-grid">
-                <div class="school-card">
-                    <div class="school-header">
-                        <h3>Apex Stellenbosch</h3>
-                        <div class="school-logo">
-                            <img src="assets/images/logos/Apex Stellenbosch Logo - No Border.png" alt="Apex Stellenbosch Logo">
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>Apex Stellenbosch School</h3>
+                    <div class="school-info">
+                        <div class="info-item">
+                            <span class="info-label">Total Learners:</span>
+                            <span class="info-value">326</span>
                         </div>
-                    </div>
-                    <div class="school-stats">
-                        <div class="stat-grid">
-                            <div class="stat-box">
-                                <div class="stat-number">326</div>
-                                <div class="stat-label">Learners</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">12</div>
-                                <div class="stat-label">Staff</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">2.2%</div>
-                                <div class="stat-label">Learner Absenteeism</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="stat-number">1.7%</div>
-                                <div class="stat-label">Staff Absenteeism</div>
-                            </div>
+                        <div class="info-item">
+                            <span class="info-label">Staff Members:</span>
+                            <span class="info-value">12</span>
                         </div>
-                        <div class="financial-info">
-                            <div class="financial-item">
-                                <span class="financial-label">Current School Fees:</span>
-                                <span class="financial-value">R620/month</span>
-                            </div>
-                            <div class="financial-item">
-                                <span class="financial-label">Forecasted Cost per Learner:</span>
-                                <span class="financial-value">R17,200/year</span>
-                            </div>
+                        <div class="info-item">
+                            <span class="info-label">Learner Attendance:</span>
+                            <span class="info-value">97.8%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Staff Attendance:</span>
+                            <span class="info-value">98.3%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Current School Fees:</span>
+                            <span class="info-value">R620/month</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Forecasted Cost per Learner:</span>
+                            <span class="info-value">R17,200/year</span>
                         </div>
                     </div>
                 </div>
@@ -151,40 +409,35 @@
     <section id="statistics" class="section statistics">
         <div class="container">
             <h2 class="section-title">Performance Statistics</h2>
-            <div class="stats-grid">
-                <div class="stats-card">
+            <div class="overview-grid">
+                <div class="overview-card">
                     <h3>A2 LMS Progress</h3>
-                    <div class="lms-progress">
-                        <div class="progress-circle">
-                            <div class="circle-progress" data-percentage="74">
-                                <div class="circle-inner">
-                                    <span class="percentage">74%</span>
-                                </div>
-                            </div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 74%"></div>
                         </div>
-                        <div class="progress-details">
+                        <div class="progress-text">74% Complete</div>
+                        <div style="margin-top: 1rem; color: #666;">
                             <p><strong>3,700</strong> lessons developed</p>
                             <p><strong>1,300</strong> lessons remaining</p>
                             <p><strong>5,000</strong> total goal</p>
                         </div>
                     </div>
                 </div>
-                <div class="stats-card">
+                <div class="overview-card">
                     <h3>Attendance Rates</h3>
-                    <div class="attendance-stats">
-                        <div class="attendance-item">
-                            <div class="attendance-label">Learner Attendance</div>
-                            <div class="attendance-bar">
-                                <div class="attendance-fill" data-attendance="97.8"></div>
-                            </div>
-                            <div class="attendance-percentage">97.8%</div>
+                    <div class="school-info">
+                        <div class="info-item">
+                            <span class="info-label">Learner Attendance:</span>
+                            <span class="info-value">97.8%</span>
                         </div>
-                        <div class="attendance-item">
-                            <div class="attendance-label">Staff Attendance</div>
-                            <div class="attendance-bar">
-                                <div class="attendance-fill" data-attendance="98.3"></div>
-                            </div>
-                            <div class="attendance-percentage">98.3%</div>
+                        <div class="info-item">
+                            <span class="info-label">Staff Attendance:</span>
+                            <span class="info-value">98.3%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Attendance Target:</span>
+                            <span class="info-value">>95%</span>
                         </div>
                     </div>
                 </div>
@@ -196,52 +449,20 @@
     <section id="reports" class="section reports">
         <div class="container">
             <h2 class="section-title">Visual Reports</h2>
-            <div class="reports-grid">
-                <div class="report-category">
-                    <h3>Grade 8 Term 2 Trends</h3>
-                    <div class="report-images">
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 8 Term 2 Trends EMA.jpeg" alt="Grade 8 EMA Trends">
-                            <div class="report-caption">English & Mathematics</div>
-                        </div>
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 8 Term 2 Trends HEN.jpeg" alt="Grade 8 HEN Trends">
-                            <div class="report-caption">Home Language</div>
-                        </div>
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 8 Term 2 Trends LAT.jpeg" alt="Grade 8 LAT Trends">
-                            <div class="report-caption">Life Skills</div>
-                        </div>
+            <div class="overview-card">
+                <h3>Available Reports</h3>
+                <div class="school-info">
+                    <div class="info-item">
+                        <span class="info-label">Grade 8 Term 2 Trends:</span>
+                        <span class="info-value">EMA, HEN, LAT</span>
                     </div>
-                </div>
-                <div class="report-category">
-                    <h3>Grade 9 Term 2 Trends</h3>
-                    <div class="report-images">
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 9 Term 2 Trends EMA.jpeg" alt="Grade 9 EMA Trends">
-                            <div class="report-caption">English & Mathematics</div>
-                        </div>
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 9 Term 2 Trends HEN.jpeg" alt="Grade 9 HEN Trends">
-                            <div class="report-caption">Home Language</div>
-                        </div>
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Grade 9 Term 2 Trends LAT.jpeg" alt="Grade 9 LAT Trends">
-                            <div class="report-caption">Life Skills</div>
-                        </div>
+                    <div class="info-item">
+                        <span class="info-label">Grade 9 Term 2 Trends:</span>
+                        <span class="info-value">EMA, HEN, LAT</span>
                     </div>
-                </div>
-                <div class="report-category">
-                    <h3>Comparative Analysis</h3>
-                    <div class="report-images">
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Home language schools comparison.jpeg.jpg" alt="Home Language Comparison">
-                            <div class="report-caption">Home Language Schools</div>
-                        </div>
-                        <div class="report-item">
-                            <img src="assets/images/infographics/Mathematics Systmeics comparison school.jpeg.jpg" alt="Mathematics Comparison">
-                            <div class="report-caption">Mathematics Systems</div>
-                        </div>
+                    <div class="info-item">
+                        <span class="info-label">Comparative Analysis:</span>
+                        <span class="info-value">Home Language, Mathematics</span>
                     </div>
                 </div>
             </div>
@@ -253,7 +474,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="assets/images/logos/Apex_Logo_-_White[1].png" alt="Apex Schools Logo">
+                    <strong>APEX SCHOOLS</strong>
                 </div>
                 <div class="footer-info">
                     <p>&copy; 2024 Apex Schools. All rights reserved.</p>
@@ -263,6 +484,49 @@
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script>
+        console.log('Apex M&E Dashboard loaded successfully');
+        
+        // Simple PDF generation
+        function generatePDF() {
+            const btn = document.getElementById('downloadPDF');
+            btn.innerHTML = '⏳ Generating...';
+            
+            setTimeout(() => {
+                alert('PDF generation would happen here. External PDF library needed for full functionality.');
+                btn.innerHTML = '📊 Download PDF Report';
+            }, 1000);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = 80;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Load data from JSON
+        fetch('data/statistics.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Statistics loaded:', data);
+                // Data is loaded and could be used to update the UI
+            })
+            .catch(error => {
+                console.log('Statistics file not found, using static data');
+            });
+    </script>
 </body>
 </html>
