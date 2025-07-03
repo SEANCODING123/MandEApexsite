@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apex M&E Report - Monitoring & Evaluation Dashboard</title>
+    <title>Apex Education Impact Report 2024 - Monitoring & Evaluation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
+        /* CHUNK 1: BASIC RESET AND TYPOGRAPHY */
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +14,7 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #fff;
@@ -25,508 +26,109 @@
             padding: 0 20px;
         }
 
-        /* Header Styles */
-        .header {
-            background-color: #356c84;
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        .grid-2 { grid-template-columns: 1fr 1fr; }
+        .grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c5282;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2c5282;
+        }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2d3748;
         }
 
-        .header-content {
+        /* CHUNK 2: NAVIGATION */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: #2c5282;
+            color: white;
+            padding: 1rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            color: white;
+        .nav-logo {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        .nav-list {
+        .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
         }
 
-        .nav-link {
+        .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
-        .nav-link:hover {
-            color: #fcbf16;
+        .nav-links a:hover {
+            color: #68d391;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #356c84 0%, #4a7c95 100%);
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            opacity: 0.9;
-        }
-
-        .download-btn {
-            background: linear-gradient(135deg, #fcbf16 0%, #f0b90b 100%);
-            color: #356c84;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 2rem;
-            box-shadow: 0 5px 20px rgba(252, 191, 22, 0.3);
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(252, 191, 22, 0.4);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 4rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #fcbf16;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-
-        .section:nth-child(even) {
-            background-color: #f8f9fa;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #356c84;
-        }
-
-        /* Overview Section */
-        .overview-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
-        }
-
-        .overview-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .overview-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .overview-card h3 {
-            color: #356c84;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Progress Bar */
-        .progress-container {
-            margin-top: 1rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background-color: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #356c84 0%, #4a7c95 100%);
-            width: 74%;
-            transition: width 1s ease;
-        }
-
-        .progress-text {
-            font-weight: 500;
-            color: #356c84;
-        }
-
-        /* School Info */
-        .school-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .info-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .info-label {
-            font-weight: 500;
-            color: #666;
-        }
-
-        .info-value {
-            font-weight: 600;
-            color: #356c84;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #356c84;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-info {
-            text-align: right;
-        }
-
-        .footer-info p {
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .overview-grid {
+            .grid-2, .grid-3 {
                 grid-template-columns: 1fr;
             }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 1rem;
+            .nav-links {
+                display: none;
             }
-            
-            .nav-list {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Navigation -->
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    APEX SCHOOLS
-                </div>
-                <nav class="nav">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#overview" class="nav-link">Overview</a></li>
-                        <li class="nav-item"><a href="#schools" class="nav-link">Schools</a></li>
-                        <li class="nav-item"><a href="#statistics" class="nav-link">Statistics</a></li>
-                        <li class="nav-item"><a href="#reports" class="nav-link">Reports</a></li>
-                    </ul>
-                </nav>
+            <div class="nav-content">
+                <div class="nav-logo">APEX EDUCATION</div>
+                <ul class="nav-links">
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#academic">Academic Impact</a></li>
+                    <li><a href="#financial">Financial Efficiency</a></li>
+                    <li><a href="#innovation">Innovation</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#future">Future Plans</a></li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Apex M&E Report Dashboard</h1>
-                <p class="hero-subtitle">Monitoring & Evaluation Data for Apex Schools Network</p>
-                <button id="downloadPDF" class="download-btn" onclick="generatePDF()">
-                    📊 Download PDF Report
-                </button>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">326</div>
-                        <div class="stat-label">Total Learners</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12</div>
-                        <div class="stat-label">Staff Members</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3,700</div>
-                        <div class="stat-label">LMS Lessons</div>
-                    </div>
-                </div>
-            </div>
+    <!-- PLACEHOLDER FOR CONTENT CHUNKS -->
+    <div id="content-placeholder">
+        <div class="container" style="padding: 4rem 0; text-align: center;">
+            <h1>Apex Education Impact Report 2024</h1>
+            <p>Building in chunks... Navigation structure ready!</p>
         </div>
-    </section>
+    </div>
 
-    <!-- Overview Section -->
-    <section id="overview" class="section overview">
-        <div class="container">
-            <h2 class="section-title">Overview</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h3>A2 LMS Development</h3>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-fill" data-progress="74"></div>
-                        </div>
-                        <div class="progress-text">3,700 of 5,000 lessons developed (74%)</div>
-                    </div>
-                </div>
-                <div class="overview-card">
-                    <h3>Apex Stellenbosch</h3>
-                    <div class="school-info">
-                        <div class="info-item">
-                            <span class="info-label">Total Learners:</span>
-                            <span class="info-value">326</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Staff Members:</span>
-                            <span class="info-value">12</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Learner Absenteeism:</span>
-                            <span class="info-value">2.2%</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Staff Absenteeism:</span>
-                            <span class="info-value">1.7%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schools Section -->
-    <section id="schools" class="section schools">
-        <div class="container">
-            <h2 class="section-title">School Performance</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h3>Apex Stellenbosch School</h3>
-                    <div class="school-info">
-                        <div class="info-item">
-                            <span class="info-label">Total Learners:</span>
-                            <span class="info-value">326</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Staff Members:</span>
-                            <span class="info-value">12</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Learner Attendance:</span>
-                            <span class="info-value">97.8%</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Staff Attendance:</span>
-                            <span class="info-value">98.3%</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Current School Fees:</span>
-                            <span class="info-value">R620/month</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Forecasted Cost per Learner:</span>
-                            <span class="info-value">R17,200/year</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section id="statistics" class="section statistics">
-        <div class="container">
-            <h2 class="section-title">Performance Statistics</h2>
-            <div class="overview-grid">
-                <div class="overview-card">
-                    <h3>A2 LMS Progress</h3>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 74%"></div>
-                        </div>
-                        <div class="progress-text">74% Complete</div>
-                        <div style="margin-top: 1rem; color: #666;">
-                            <p><strong>3,700</strong> lessons developed</p>
-                            <p><strong>1,300</strong> lessons remaining</p>
-                            <p><strong>5,000</strong> total goal</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="overview-card">
-                    <h3>Attendance Rates</h3>
-                    <div class="school-info">
-                        <div class="info-item">
-                            <span class="info-label">Learner Attendance:</span>
-                            <span class="info-value">97.8%</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Staff Attendance:</span>
-                            <span class="info-value">98.3%</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Attendance Target:</span>
-                            <span class="info-value">>95%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reports Section -->
-    <section id="reports" class="section reports">
-        <div class="container">
-            <h2 class="section-title">Visual Reports</h2>
-            <div class="overview-card">
-                <h3>Available Reports</h3>
-                <div class="school-info">
-                    <div class="info-item">
-                        <span class="info-label">Grade 8 Term 2 Trends:</span>
-                        <span class="info-value">EMA, HEN, LAT</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Grade 9 Term 2 Trends:</span>
-                        <span class="info-value">EMA, HEN, LAT</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Comparative Analysis:</span>
-                        <span class="info-value">Home Language, Mathematics</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <strong>APEX SCHOOLS</strong>
-                </div>
-                <div class="footer-info">
-                    <p>&copy; 2024 Apex Schools. All rights reserved.</p>
-                    <p>Monitoring & Evaluation Dashboard</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        console.log('Apex M&E Dashboard loaded successfully');
-        
-        // Simple PDF generation
-        function generatePDF() {
-            const btn = document.getElementById('downloadPDF');
-            btn.innerHTML = '⏳ Generating...';
-            
-            setTimeout(() => {
-                alert('PDF generation would happen here. External PDF library needed for full functionality.');
-                btn.innerHTML = '📊 Download PDF Report';
-            }, 1000);
-        }
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const headerHeight = 80;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Load data from JSON
-        fetch('data/statistics.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log('Statistics loaded:', data);
-                // Data is loaded and could be used to update the UI
-            })
-            .catch(error => {
-                console.log('Statistics file not found, using static data');
-            });
-    </script>
 </body>
 </html>
