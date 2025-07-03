@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex M&E Report - Monitoring & Evaluation Dashboard</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/images/logos/Apex_Logo_-_White[1].png" alt="Apex Schools Logo" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#overview" class="nav-link">Overview</a></li>
+                        <li class="nav-item"><a href="#schools" class="nav-link">Schools</a></li>
+                        <li class="nav-item"><a href="#statistics" class="nav-link">Statistics</a></li>
+                        <li class="nav-item"><a href="#reports" class="nav-link">Reports</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Apex M&E Report Dashboard</h1>
+                <p class="hero-subtitle">Monitoring & Evaluation Data for Apex Schools Network</p>
+                <button id="downloadPDF" class="download-btn">
+                    <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7,10 12,15 17,10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download PDF Report
+                </button>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">326</div>
+                        <div class="stat-label">Total Learners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Staff Members</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3,700</div>
+                        <div class="stat-label">LMS Lessons</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section overview">
+        <div class="container">
+            <h2 class="section-title">Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3>A2 LMS Development</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="74"></div>
+                        </div>
+                        <div class="progress-text">3,700 of 5,000 lessons developed (74%)</div>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <h3>Apex Stellenbosch</h3>
+                    <div class="school-info">
+                        <div class="info-item">
+                            <span class="info-label">Total Learners:</span>
+                            <span class="info-value">326</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Staff Members:</span>
+                            <span class="info-value">12</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Learner Absenteeism:</span>
+                            <span class="info-value">2.2%</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Staff Absenteeism:</span>
+                            <span class="info-value">1.7%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schools Section -->
+    <section id="schools" class="section schools">
+        <div class="container">
+            <h2 class="section-title">School Performance</h2>
+            <div class="schools-grid">
+                <div class="school-card">
+                    <div class="school-header">
+                        <h3>Apex Stellenbosch</h3>
+                        <div class="school-logo">
+                            <img src="assets/images/logos/Apex Stellenbosch Logo - No Border.png" alt="Apex Stellenbosch Logo">
+                        </div>
+                    </div>
+                    <div class="school-stats">
+                        <div class="stat-grid">
+                            <div class="stat-box">
+                                <div class="stat-number">326</div>
+                                <div class="stat-label">Learners</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Staff</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">2.2%</div>
+                                <div class="stat-label">Learner Absenteeism</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-number">1.7%</div>
+                                <div class="stat-label">Staff Absenteeism</div>
+                            </div>
+                        </div>
+                        <div class="financial-info">
+                            <div class="financial-item">
+                                <span class="financial-label">Current School Fees:</span>
+                                <span class="financial-value">R620/month</span>
+                            </div>
+                            <div class="financial-item">
+                                <span class="financial-label">Forecasted Cost per Learner:</span>
+                                <span class="financial-value">R17,200/year</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="statistics" class="section statistics">
+        <div class="container">
+            <h2 class="section-title">Performance Statistics</h2>
+            <div class="stats-grid">
+                <div class="stats-card">
+                    <h3>A2 LMS Progress</h3>
+                    <div class="lms-progress">
+                        <div class="progress-circle">
+                            <div class="circle-progress" data-percentage="74">
+                                <div class="circle-inner">
+                                    <span class="percentage">74%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-details">
+                            <p><strong>3,700</strong> lessons developed</p>
+                            <p><strong>1,300</strong> lessons remaining</p>
+                            <p><strong>5,000</strong> total goal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-card">
+                    <h3>Attendance Rates</h3>
+                    <div class="attendance-stats">
+                        <div class="attendance-item">
+                            <div class="attendance-label">Learner Attendance</div>
+                            <div class="attendance-bar">
+                                <div class="attendance-fill" data-attendance="97.8"></div>
+                            </div>
+                            <div class="attendance-percentage">97.8%</div>
+                        </div>
+                        <div class="attendance-item">
+                            <div class="attendance-label">Staff Attendance</div>
+                            <div class="attendance-bar">
+                                <div class="attendance-fill" data-attendance="98.3"></div>
+                            </div>
+                            <div class="attendance-percentage">98.3%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="section reports">
+        <div class="container">
+            <h2 class="section-title">Visual Reports</h2>
+            <div class="reports-grid">
+                <div class="report-category">
+                    <h3>Grade 8 Term 2 Trends</h3>
+                    <div class="report-images">
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 8 Term 2 Trends EMA.jpeg" alt="Grade 8 EMA Trends">
+                            <div class="report-caption">English & Mathematics</div>
+                        </div>
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 8 Term 2 Trends HEN.jpeg" alt="Grade 8 HEN Trends">
+                            <div class="report-caption">Home Language</div>
+                        </div>
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 8 Term 2 Trends LAT.jpeg" alt="Grade 8 LAT Trends">
+                            <div class="report-caption">Life Skills</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-category">
+                    <h3>Grade 9 Term 2 Trends</h3>
+                    <div class="report-images">
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 9 Term 2 Trends EMA.jpeg" alt="Grade 9 EMA Trends">
+                            <div class="report-caption">English & Mathematics</div>
+                        </div>
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 9 Term 2 Trends HEN.jpeg" alt="Grade 9 HEN Trends">
+                            <div class="report-caption">Home Language</div>
+                        </div>
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Grade 9 Term 2 Trends LAT.jpeg" alt="Grade 9 LAT Trends">
+                            <div class="report-caption">Life Skills</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-category">
+                    <h3>Comparative Analysis</h3>
+                    <div class="report-images">
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Home language schools comparison.jpeg.jpg" alt="Home Language Comparison">
+                            <div class="report-caption">Home Language Schools</div>
+                        </div>
+                        <div class="report-item">
+                            <img src="assets/images/infographics/Mathematics Systmeics comparison school.jpeg.jpg" alt="Mathematics Comparison">
+                            <div class="report-caption">Mathematics Systems</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logos/Apex_Logo_-_White[1].png" alt="Apex Schools Logo">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 Apex Schools. All rights reserved.</p>
+                    <p>Monitoring & Evaluation Dashboard</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
